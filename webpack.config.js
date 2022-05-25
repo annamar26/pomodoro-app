@@ -31,7 +31,7 @@ module.exports = {
       },
 
       {
-        test: /\.css$/,
+        test: /\.scss$/,
         use: [
           'vue-style-loader',
           'css-loader',
@@ -42,12 +42,12 @@ module.exports = {
   },
   plugins: [
     new VueLoaderPlugin(),
-    // new ModuleFederationPlugin({
-    //   name: 'pomodoro',
-    //   filename: 'remoteEntry.js',
-    //   exposes: { './Pomodoro': './src/App.vue' },
-    //   shared: deps.dependencies,
-    // }),
+    new ModuleFederationPlugin({
+      name: 'pomodoro',
+      filename: 'remoteEntry.js',
+      exposes: { './Pomodoro': './src/App.vue' },
+      shared: deps.dependencies,
+    }),
     new HtmlWebpackPlugin({
       template: './dist/index.html',
     }),
