@@ -1,5 +1,5 @@
 <template>
-  <GreetingComponent msg="Welcome to Your Vue.js + TypeScript App" />
+  <GreetingComponent ref="saludo" msg="Welcome to Your Vue.js + TypeScript App" />
   <TimerComponent />
 </template>
 

@@ -45,7 +45,8 @@ module.exports = {
     new ModuleFederationPlugin({
       name: 'pomodoro',
       filename: 'remoteEntry.js',
-      exposes: { './Pomodoro': './src/App.vue' },
+      library: { name: 'pomodoro', type: 'var' },
+      exposes: { './Pomodoro': './src/bootstrap.ts' },
       shared: deps.dependencies,
     }),
     new HtmlWebpackPlugin({

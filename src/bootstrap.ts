@@ -1,5 +1,9 @@
+/* eslint-disable import/prefer-default-export */
 import { createApp } from 'vue';
 import App from './App.vue';
 import './registerServiceWorker';
 
-createApp(App).mount('#app');
+export const mount = (element:string): void => {
+  createApp(App).mount(element);
+};
+mount('#app');
